@@ -4,46 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
 </head>
 <body>
 
+    <div class="min-h-screen bg-gray-900 flex flex-col">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-2xl font-bold text-center my-6 text-white"></h1>
+        </div>
+    </div>
 
+    <div class="max-h-[500px] overflow-x-auto overflow-y-hidden">
+        <div class="flex space-x-4">
+            <!-- Éléments à l'intérieur du conteneur -->
+            <div class="w-[200px] h-[200px] bg-blue-500 text-white flex items-center justify-center">
+                Élément 1
+            </div>
+            <div class="w-[200px] h-[200px] bg-green-500 text-white flex items-center justify-center">
+                Élément 2
+            </div>
+            <div class="w-[200px] h-[200px] bg-red-500 text-white flex items-center justify-center">
+                Élément 3
+            </div>
+            <div class="w-[200px] h-[200px] bg-yellow-500 text-white flex items-center justify-center">
+                Élément 4
+            </div>
+            <div class="w-[200px] h-[200px] bg-purple-500 text-white flex items-center justify-center">
+                Élément 5
+            </div>
+            <!-- Ajoutez plus d'éléments si nécessaire -->
+        </div>
+    </div>
 
-    <div class="container my-5">
-        <h1 class="mb-4">Films populaires</h1>
-        <div class="row">
+    <div class="overflow-x-auto py-4 max-h-[300px]">
+        <div class="flex space-x-4 max-h-[300px]">
             @foreach ($popularMovies as $movie)
-                {{-- <div class="col-md-3 mb-4">
-                    <div class="card">
-                        <img src="https://image.tmdb.org/t/p/w500/{{ $movie['poster_path'] }}" 
-                             class="card-img-top" 
-                             alt="{{ $movie['title'] }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $movie['title'] }}</h5>
-                            <p class="card-text">{{ Str::limit($movie['overview'], 100) }}</p>
-                        </div>
-                    </div>
-                </div> --}}
-                <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white">
-                    <div class="flex">
-                        <!-- Image du film -->
-                        <img src="https://image.tmdb.org/t/p/w500/{{ $movie['poster_path'] }}" alt="{{ $movie['title'] }}" class="w-48 h-32 object-cover">
-                
-                        <!-- Contenu de la carte -->
-                        <div class="p-4 flex flex-col justify-between flex-grow">
-                            <h3 class="text-xl font-semibold text-gray-800 truncate">{{ $movie['title'] }}</h3>
-                            <p class="text-sm text-gray-600 mt-2 line-clamp-3">{{ Str::limit($movie['overview'], 150) }}</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-gray-500 text-sm">{{ \Carbon\Carbon::parse($movie['release_date'])->year }}</span>
-                                <a href="#" class="text-blue-500 text-sm hover:underline">Voir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <x-movie-card :movie="$movie" /> <!-- Utilisation du composant MovieCard -->
             @endforeach
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    @vite('resources/js/app.js')
+
 </body>
 </html>
