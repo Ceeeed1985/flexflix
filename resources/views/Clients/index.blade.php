@@ -8,13 +8,13 @@
     
 </head>
 <body>
-
+@include('layouts/navbar')
     <div class="min-h-screen bg-gray-900 flex flex-col">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-2xl font-bold text-center my-6 text-white"></h1>
+            <h1 class="text-2xl font-bold text-center my-6 text-teal-400">Hello</h1>
         </div>
     </div>
-
+    <h1 class="text-teal-400">Hello</h1>
     <div class="max-h-[500px] overflow-x-auto overflow-y-hidden">
         <div class="flex space-x-4">
             <!-- Éléments à l'intérieur du conteneur -->
