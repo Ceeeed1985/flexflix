@@ -10,14 +10,9 @@
 <body>
 @include('layouts/navbar')
     <div class="min-h-screen bg-gray-900 flex flex-col">
-        {{-- <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-2xl font-bold text-center my-6 text-teal-400">Hello</h1>
-        </div> --}}
         <div class="main-wrapper w-[80%] mx-auto mt-10">
             <h2 class="text-3xl text-teal-400 font-semibold pb-3">Nouveautés</h2>
-        
-
-            <div class="wrapper-content flex justify-around items-center overflow-x-auto py-2 border border-2 rounded-xl ">
+            <div class="wrapper-content flex justify-around items-center overflow-x-auto py-2 rounded-xl ">
                 <div class="wrapper w-[95%] flex justify-around items-center overflow-x-auto">
                     <div class="w-auto flex py-5 gap-5">
                         @foreach ($popularMovies as $popularMovie)
@@ -27,8 +22,7 @@
                 </div>
             </div>
         </div>
-    {{-- </div>
-    <div class="min-h-screen bg-gray-900 flex flex-col"> --}}
+
         <div class="main-wrapper w-[80%] mx-auto mt-10">
             <h2 class="text-3xl text-teal-400 font-semibold pb-3">A venir</h2>
             <div class="wrapper-content flex justify-around items-center overflow-x-auto py-2 border border-2 rounded-xl ">
