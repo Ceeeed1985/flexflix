@@ -10,40 +10,40 @@
 <body>
 @include('layouts/navbar')
     <div class="min-h-screen bg-gray-900 flex flex-col">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        {{-- <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-2xl font-bold text-center my-6 text-teal-400">Hello</h1>
-        </div>
-    </div>
-    <h1 class="text-teal-400">Hello</h1>
-    <div class="max-h-[500px] overflow-x-auto overflow-y-hidden">
-        <div class="flex space-x-4">
-            <!-- Éléments à l'intérieur du conteneur -->
-            <div class="w-[200px] h-[200px] bg-blue-500 text-white flex items-center justify-center">
-                Élément 1
-            </div>
-            <div class="w-[200px] h-[200px] bg-green-500 text-white flex items-center justify-center">
-                Élément 2
-            </div>
-            <div class="w-[200px] h-[200px] bg-red-500 text-white flex items-center justify-center">
-                Élément 3
-            </div>
-            <div class="w-[200px] h-[200px] bg-yellow-500 text-white flex items-center justify-center">
-                Élément 4
-            </div>
-            <div class="w-[200px] h-[200px] bg-purple-500 text-white flex items-center justify-center">
-                Élément 5
-            </div>
-            <!-- Ajoutez plus d'éléments si nécessaire -->
-        </div>
-    </div>
+        </div> --}}
+        <div class="main-wrapper w-[80%] mx-auto mt-10">
+            <h2 class="text-3xl text-teal-400 font-semibold pb-3">Nouveautés</h2>
+        
 
-    <div class="overflow-x-auto py-4 max-h-[300px]">
-        <div class="flex space-x-4 max-h-[300px]">
-            @foreach ($popularMovies as $movie)
-                <x-movie-card :movie="$movie" /> <!-- Utilisation du composant MovieCard -->
-            @endforeach
+            <div class="wrapper-content flex justify-around items-center overflow-x-auto py-2 border border-2 rounded-xl ">
+                <div class="wrapper w-[95%] flex justify-around items-center overflow-x-auto">
+                    <div class="w-auto flex py-5 gap-5">
+                        @foreach ($popularMovies as $popularMovie)
+                            <x-movie-card :movie="$popularMovie" />
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{-- </div>
+    <div class="min-h-screen bg-gray-900 flex flex-col"> --}}
+        <div class="main-wrapper w-[80%] mx-auto mt-10">
+            <h2 class="text-3xl text-teal-400 font-semibold pb-3">A venir</h2>
+            <div class="wrapper-content flex justify-around items-center overflow-x-auto py-2 border border-2 rounded-xl ">
+                <div class="wrapper w-[95%] flex justify-around items-center overflow-x-auto">
+                    <div class="w-auto flex py-5 gap-5">
+                        @foreach ($upcomingMovies as $upcomingMovie)
+                            <x-movie-card :movie="$upcomingMovie" />
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+   
+    
 
 
     @vite('resources/js/app.js')

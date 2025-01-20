@@ -19,6 +19,7 @@ class HomeController extends Controller
     public function index(): View
     {
         $popularMovies = $this->tmdbService->getPopularMovies();
-        return view('Clients.index', compact('popularMovies'));
+        $upcomingMovies = $this->tmdbService->getUpcomingMovies();
+        return view('Clients.index', compact('popularMovies', 'upcomingMovies'));
     }
 }

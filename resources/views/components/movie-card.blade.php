@@ -1,6 +1,6 @@
-<div x-data="{ open: false }" class="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden flex">
+<div x-data="{ open: false }" class="w-[450px] h-[275px] bg-white shadow-lg rounded overflow-hidden flex">
     <!-- Image du film (partie gauche) -->
-    <img src="https://image.tmdb.org/t/p/w500/{{ $movie['poster_path'] }}" alt="{{ $movie['title'] }}" class="w-24 h-32 object-cover">
+    <img src="https://image.tmdb.org/t/p/w500/{{ $movie['poster_path'] }}" alt="{{ $movie['title'] }}" class="object-cover">
 
     <!-- Détails du film (partie droite) -->
     <div class="flex flex-col p-4 justify-between flex-grow">
