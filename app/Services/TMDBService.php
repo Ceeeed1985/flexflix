@@ -31,6 +31,22 @@ class TMDBService
         return [];
     }
 
+    public function getUpcomingMovies()
+    {
+        $response = Http::withOptions([
+            'verify' => false,  // Désactive la vérification SSL temporairement
+        ])->get("{$this->baseUrl}/movie/upcoming", [
+            'api_key' => $this->apiKey,
+            'language' => 'fr-FR',
+        ]);
+
+        if ($response->successful()) {
+            return $response->json()['results'];
+        }
+
+        return [];
+    }
+
     public function searchMovies($query)
     {
         $response = Http::withOptions([
