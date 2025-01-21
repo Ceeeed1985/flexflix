@@ -1,10 +1,12 @@
 <div 
     x-data="scrollContainer({{ $scrollSpeed ?? 15 }})"
+    @wheel="scrollWithWheel($event)"
     class="relative wrapper-content flex justify-around items-center py-2 rounded-xl"
 >
     <!-- Bouton gauche -->
     <button 
-        @mouseover="scrollLeft" 
+        @mousedown="scrollLeft" 
+        @mouseup="stopScroll" 
         @mouseleave="stopScroll"
         class="absolute left-0 z-10 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-teal-500 transition"
     >
@@ -22,7 +24,8 @@
 
     <!-- Bouton droit -->
     <button 
-        @mouseover="scrollRight" 
+        @mousedown="scrollRight" 
+        @mouseup="stopScroll" 
         @mouseleave="stopScroll"
         class="absolute right-0 z-10 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-teal-500 transition"
     >
